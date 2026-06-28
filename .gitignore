@@ -3,3 +3,4 @@ plugins/*
 !plugins/google/
 plugins/google/*
 !plugins/google/login.ahk
+includes.ahk

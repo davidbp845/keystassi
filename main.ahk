@@ -15,7 +15,12 @@ DllCall("SetProcessDpiAwarenessContext", "ptr", -4) ; DPI per-monitor v2
 MenuLoader.load("config.ini")
 mystate := StateManager()
 
-#Include plugins\google\login.ahk
+#Include *i includes.ahk
+if !FileExist("includes.ahk") {
+
+} else {
+
+}
 
 HotkeyLoader.load("config.ini")
 HotkeyService.AssignHotkey(HotkeyLoader.hotkeys["toggleState"], (*) => mystate.toggleState(), ["all"])
