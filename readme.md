@@ -27,3 +27,7 @@ Se cambian en la sección `[hotkeys]` de `config.ini`. El árbol del menú se de
 ## Grabador
 
 `recorder/` es una copia modificada de AHK Macro Recorder; ver `recorder/README.md`.
+
+## Licencia
+
+MIT (ver `license.txt`), salvo `recorder/`, que conserva los derechos de sus autores.
