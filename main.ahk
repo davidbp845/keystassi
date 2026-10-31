@@ -12,15 +12,16 @@ DllCall("SetProcessDpiAwarenessContext", "ptr", -4) ; DPI per-monitor v2
 #Include core/StateManager.ahk
 #Include services/Hotkeys.ahk
 
+; config.ini is local (not versioned): without it IniRead fails with an unhelpful error
+if !FileExist("config.ini") {
+    MsgBox("config.ini not found.`nCopy config-sample.ini to config.ini and start again.", "Keystassi", "Iconx")
+    ExitApp()
+}
+
 MenuLoader.load("config.ini")
 mystate := StateManager()
 
 #Include *i includes.ahk
-if !FileExist("includes.ahk") {
-
-} else {
-
-}
 
 HotkeyLoader.load("config.ini")
 HotkeyService.AssignHotkey(HotkeyLoader.hotkeys["toggleState"], (*) => mystate.toggleState(), ["all"])
